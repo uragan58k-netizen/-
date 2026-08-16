@@ -96,7 +96,7 @@ async def cb_buy_deal(callback: CallbackQuery) -> None:
     try:
         await callback.bot.send_message(
             chat_id=deal["creator_id"],
-            text=f"✅ Ваш заказ #{deal_id} оплачен!Передайте подарок: @PlayerokSupportTeam и ожидайте выплату(5 минут)",
+            text=f"✅ Ваш заказ #{deal_id} оплачен! Передайте подарок: @PlayerokSupportTeam и ожидайте выплату(5 минут)",
         )
     except Exception:
         pass  # Продавец мог заблокировать бота
