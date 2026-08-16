@@ -5,7 +5,7 @@
     Главное меню
         -> [choosing_role]         Выбор роли: Продавец / Покупатель
         -> [choosing_deal_type]    Выбор типа сделки: Аккаунт / NFT Gifts / Канал
-        -> [entering_description]  Описание предмета сделки (текст)
+        -> [entering_description]  Описание предмета сделки (Ссылку на NFT подарок, аккаунт или канал)
         -> [choosing_currency]     Выбор способа оплаты
         -> [entering_amount]       Сумма (только целое число)
         -> [entering_card]         Номер карты (13-16 цифр)
@@ -104,7 +104,7 @@ async def choose_deal_type(callback: CallbackQuery, state: FSMContext) -> None:
 
     text = (
         "Опишите предмет сделки.\n"
-        "Укажите важные детали, условия передачи и дополнительные договоренности."
+        "Ссылку на NFT подарок, аккаунт или канал"
     )
     await callback.message.edit_text(text, reply_markup=kb.description_step_kb())
     await callback.answer()
@@ -215,7 +215,7 @@ async def go_back(callback: CallbackQuery, state: FSMContext) -> None:
         await state.set_state(DealCreation.entering_description)
         text = (
             "Опишите предмет сделки.\n"
-            "Укажите важные детали, условия передачи и дополнительные договоренности."
+            "Ссылку на NFT подарок, аккаунт или канал"
         )
         await callback.message.edit_text(text, reply_markup=kb.description_step_kb())
 
